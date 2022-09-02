@@ -1,0 +1,105 @@
+---
+name: coab-depls
+releases:
+  bosh-dns:
+    repository: cloudfoundry/bosh-dns-release
+    version: 1.29.0
+  bosh-dns-aliases:
+    repository: cloudfoundry/bosh-dns-aliases-release
+    version: 0.0.4
+  bpm:
+    repository: cloudfoundry/bpm-release
+    version: 1.1.15
+  cf-cli:
+    repository: bosh-packages/cf-cli-release
+    version: 1.38.0
+  cf-mysql:
+    repository: orange-cloudfoundry/cf-mysql-release
+    skip_branch_checkout: false
+    tag_prefix: ''
+    version: 38.1.0
+  cf-rabbitmq:
+    repository: pivotal-cf/cf-rabbitmq-release
+    skip_branch_checkout: false
+    version: 415.0.0
+  cf-rabbitmq-multitenant-broker:
+    repository: pivotal-cf/cf-rabbitmq-multitenant-broker-release
+    skip_branch_checkout: false
+    version: 107.0.0
+  cf-rabbitmq-smoke-tests:
+    repository: pivotal-cf/cf-rabbitmq-smoke-tests-release
+    skip_branch_checkout: false
+    version: 118.0.0
+  cron:
+    repository: cloudfoundry-community/cron-boshrelease
+    version: 1.3.0
+  docker:
+    repository: cloudfoundry-incubator/docker-boshrelease
+    version: 35.3.4
+  generic-scripting:
+    repository: orange-cloudfoundry/generic-scripting-release
+    version: '3'
+  generic-taint-jobs:
+    repository: orange-cloudfoundry/generic-taint-jobs-release
+    version: '2'
+  haproxy:
+    repository: cloudfoundry-community/haproxy-boshrelease
+    version: 11.10.2
+  helm-kubectl:
+    repository: orange-cloudfoundry/helm-kubectl-boshrelease
+    tag_prefix: ''
+    version: '39'
+  k3s:
+    repository: orange-cloudfoundry/k3s-boshrelease
+    version: '29'
+  minio:
+    repository: minio/minio-boshrelease
+    version: 2020-06-18T02-23-35Z
+  mongodb-services:
+    repository: orange-cloudfoundry/mongodb-boshrelease
+    tag_prefix: ''
+    version: '16'
+  networking:
+    repository: orange-cloudfoundry/networking-release
+    sha1: TO_BE_UPDATED_FOR_BOOTSTRAP
+    skip_branch_checkout: false
+    version: '10'
+  nginx:
+    repository: cloudfoundry-community/nginx-release
+    tag_prefix: ''
+    version: 1.19.1
+  node-exporter:
+    repository: cloudfoundry-community/node-exporter-boshrelease
+    version: 5.0.0
+  open-iscsi:
+    repository: orange-cloudfoundry/open-iscsi-boshrelease
+    tag_prefix: ''
+    version: '1'
+  orange-prometheus-addons:
+    repository: orange-cloudfoundry/orange-prometheus-addons-boshrelease/
+    version: '3'
+  os-conf:
+    repository: cloudfoundry/os-conf-release
+    version: 22.1.1
+  prometheus:
+    repository: cloudfoundry-community/prometheus-boshrelease
+    version: 27.0.0
+  redis-service:
+    repository: orange-cloudfoundry/redis-orange
+    skip_branch_checkout: false
+    version: '3.2'
+  routing:
+    repository: cloudfoundry/routing-release
+    version: 0.229.0
+  shield:
+    repository: starkandwayne/shield-boshrelease
+    version: 8.7.4
+  syslog:
+    repository: cloudfoundry/syslog-release
+    version: 11.7.5
+  terraform:
+    repository: orange-cloudfoundry/terraform-release
+    tag_prefix: ''
+    version: '4'
+stemcell:
+  version: '1.97'

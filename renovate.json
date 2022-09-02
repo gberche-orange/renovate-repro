@@ -1,0 +1,72 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":disableRateLimiting"
+  ],
+
+  "ignorePaths": [
+    "**/terraform-config/**",
+    "vendor/k8s-manifests/**",
+    "submodules/**",
+    "master-depls/**/k8s-config/manifests/**/test-cases/**"
+  ],
+  "flux": {
+    "fileMatch": [
+      "shared-operators/k8s-kustomize-bases/helm/.+/.+\\.yaml$",
+      ".+/.+/k8s-config/manifests/.+\\.yaml$"
+    ]
+  },
+  "kubernetes": {
+    "fileMatch": [
+      "shared-operators/k8s-kustomize-bases/.+\\.yaml$",
+      ".+/.+/k8s-config/manifests/.+\\.yaml$"
+    ],
+    "ignorePaths": [
+      "shared-operators/k8s-kustomize-bases/services/redis-binding/redis-binding-formatter-helm-chart"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["helm"],
+      "matchPackageNames": ["ingress-nginx"],
+      "versioning": "pep440"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": [
+        "boshprometheus/bosh-exporter",
+        "boynux/squid-exporter",
+        "envoyproxy/envoy",
+        "niedbalski/openstack-exporter-linux-amd64",
+        "pryorda/vmware_exporter",
+        "thanosio/thanos"
+      ],
+      "versioning": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
+    }
+  ],
+
+  "regexManagers": [
+    {
+      "fileMatch": ["shared-operators/docker-images/docker-images-versions-vars\\.yml$"],
+      "matchStrings": [
+        "(?<depName>[a-z0-9/\\-_]*?): \"(?<currentValue>[a-z0-9\\.\\-]*?)\"\\nn"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    },
+    {
+      "fileMatch": [".+/root-deployment\\.yml$"],
+      "matchStrings": [
+        "( +comments:.*\\n( {6}.*\\n)+)? +repository: (?<depName>[a-z0-9/-]*?)\\n( +sha1: .*\\n)?( +skip_branch_checkout: .*\\n)?( +tag_prefix: (?<tagPrefix>.*)\\n)? +version: '?(?<currentValue>[a-zA-Z0-9\\.\\-]*?)'?\\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "{{#if tagPrefix}}^v(?<version>.*){{else}}(?<version>.*){{/if}}"
+    }
+  ]
+
+}
+
+
+
