@@ -52,7 +52,7 @@ releases:
     repository: cloudfoundry/cflinuxfs3-release
     version: 0.274.0
   credhub:
-    repository: pivotal-cf/credhub-release
+    repository: pivotal/credhub-release
     skip_branch_checkout: false
     tag_prefix: ''
     version: 2.11.2
