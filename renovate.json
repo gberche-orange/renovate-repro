@@ -75,7 +75,7 @@
     },
     {
       "matchDatasources": ["github-releases"],
-      "matchPackagePatterns": ["^cloudfoundry|-release$"],
+      "matchManagers": ["regex"],
       "addLabels": ["bosh-release"]
     }
   ],
