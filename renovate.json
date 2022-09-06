@@ -33,11 +33,6 @@
       "versioning": "pep440"
     },
     {
-      "matchDatasources": ["github-releases"],
-      "matchPackageNames": ["cloudfoundry-community/nginx-release"],
-      "allowedVersions": "/^\\.*$/"
-    },
-    {
       "matchDatasources": ["docker"],
       "matchPackageNames": [
         "boshprometheus/bosh-exporter",
