@@ -35,7 +35,7 @@
     {
       "matchDatasources": ["github-releases"],
       "matchPackageNames": ["cloudfoundry-community/nginx-release"],
-      "allowedVersions": "!/(3|4)$/"
+      "allowedVersions": "/^\\.*$/"
     },
     {
       "matchDatasources": ["docker"],
