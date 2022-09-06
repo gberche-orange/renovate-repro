@@ -39,6 +39,15 @@
       "versioning": "pep440"
     },
     {
+      "matchDatasources": ["helm"],
+      "matchPackageNames": [
+        "redis"
+      ],
+      "assignees": [
+        "gberche-orange"
+      ]
+    },
+    {
       "matchDatasources": ["docker"],
       "matchPackageNames": [
         "boshprometheus/bosh-exporter",
