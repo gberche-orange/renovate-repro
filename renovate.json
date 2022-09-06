@@ -15,6 +15,9 @@
     "fileMatch": [
       "shared-operators/k8s-kustomize-bases/helm/.+/.+\\.yaml$",
       ".+/.+/k8s-config/manifests/.+\\.yaml$"
+    ],
+    "labels": [
+      "helm"
     ]
   },
   "kubernetes": {
@@ -24,6 +27,9 @@
     ],
     "ignorePaths": [
       "shared-operators/k8s-kustomize-bases/services/redis-binding/redis-binding-formatter-helm-chart"
+    ],
+    "labels": [
+      "kubernetes"
     ]
   },
   "packageRules": [
@@ -53,7 +59,10 @@
         "(?<depName>[a-z0-9/\\-_]*?): \"(?<currentValue>[a-z0-9\\.\\-]*?)\"\\nn"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
+      "versioningTemplate": "docker",
+      "labels": [
+        "docker"
+      ]
     },
     {
       "fileMatch": [".+/root-deployment\\.yml$"],
@@ -62,7 +71,10 @@
       ],
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "loose",
-      "extractVersionTemplate": "{{#if tagPrefix}}^v(?<version>.*){{else}}(?<version>.*){{/if}}"
+      "extractVersionTemplate": "{{#if tagPrefix}}^v(?<version>.*){{else}}(?<version>.*){{/if}}",
+      "labels": [
+        "bosh"
+      ]
     }
   ]
 
