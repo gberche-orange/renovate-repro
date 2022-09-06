@@ -55,28 +55,28 @@
     },
     {
       "matchDatasources": ["docker"],
-      "labels": ["docker"]
+      "addLabels": ["docker"]
     },
     {
       "matchDatasources": ["rubygems"],
-      "labels": ["rubygems"]
+      "addLabels": ["rubygems"]
     },
     {
       "matchDatasources": ["ruby-version"],
-      "labels": ["ruby-version"]
+      "addLabels": ["ruby-version"]
     },
     {
       "matchDatasources": ["helm"],
-      "labels": ["helm"]
+      "addLabels": ["helm"]
     },
     {
       "matchDatasources": ["terraform-provider"],
-      "labels": ["terraform-provider"]
+      "addLabels": ["terraform-provider"]
     },
     {
       "matchDatasources": ["github-releases"],
       "matchPackagePatterns": ["^cloudfoundry|-release$"],
-      "labels": ["bosh-release"]
+      "addLabels": ["bosh-release"]
     }
   ],
 
