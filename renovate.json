@@ -42,6 +42,15 @@
       ]
     },
     {
+      "matchDatasources": ["github-releases"],
+      "matchPackageNames": [
+        "pivotal-cf/shared-redis-release"
+      ],
+      "assignees": [
+        "JCL38-ORANGE"
+      ]
+    },
+    {
       "matchDatasources": ["docker"],
       "matchPackageNames": [
         "boshprometheus/bosh-exporter",
