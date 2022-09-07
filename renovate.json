@@ -48,7 +48,8 @@
       ],
       "assignees": [
         "JCL38-ORANGE"
-      ]
+      ],
+      "prBodyNotes": ["Additional changelog at https://github.com/pivotal-cf/shared-redis-release/blob/master/CHANGELOG (fake url)"]
     },
     {
       "matchDatasources": ["docker"],
