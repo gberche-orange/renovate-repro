@@ -92,7 +92,7 @@ releases:
     version: 0.206.0
   shared-redis:
     repository: pivotal-cf/shared-redis-release
-    version: 437.0.16
+    version: 436.0.16
   shield:
     repository: starkandwayne/shield-boshrelease
     version: 8.7.4
