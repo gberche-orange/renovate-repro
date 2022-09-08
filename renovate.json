@@ -114,12 +114,14 @@
       "extractVersionTemplate": "{{#if tagPrefix}}^v(?<version>.*){{else}}(?<version>.*){{/if}}"
     },
     {
+      "description": "https://regex101.com/r/xBV231/1",
       "fileMatch": ["vendor/vendir-k8s-manifest.yml$"],
       "matchStrings": [
         " +githubRelease:\\n +slug: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +tag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n/"
       ],
       "datasourceTemplate": "github-releases",
-      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
+      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$",
+      "addLabels": ["vendir", "github-release"]
     },
     {
       "description": "https://regex101.com/r/SChCZX/1",
@@ -128,7 +130,8 @@
         " +git:\\n +url: (?<depName>[a-z0-9\\.\\/\\-:]*?)\\n +ref: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
       ],
       "datasourceTemplate": "git-refs",
-      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
+      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$",
+      "addLabels": ["vendir", "github-release"]
     }
   ]
 
