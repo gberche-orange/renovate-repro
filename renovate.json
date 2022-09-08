@@ -87,6 +87,10 @@
       "matchDatasources": ["github-releases"],
       "matchManagers": ["regex"],
       "addLabels": ["bosh-release"]
+    },
+    {
+      "matchCurrentVersion": ">=100.0.0",
+      "separateMultipleMajor": false
     }
   ],
 
