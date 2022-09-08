@@ -86,7 +86,20 @@
     {
       "matchDatasources": ["github-releases"],
       "matchManagers": ["regex"],
+      "matchPaths": ["root_deployment.yaml"],
       "addLabels": ["bosh-release"]
+    },
+    {
+      "matchDatasources": ["github-releases"],
+      "matchManagers": ["regex"],
+      "matchPaths": ["vendir-k8s-manifest.yml"],
+      "addLabels": ["vendir", "github-release"]
+    },
+    {
+      "matchDatasources": ["gitrefs"],
+      "matchManagers": ["regex"],
+      "matchPaths": ["vendir-k8s-manifest.yml"],
+      "addLabels": ["vendir", "gitrefs"]
     },
     {
       "description": "Prevent packages with many (e.g. weekly) major versions from creating noisy PRs, instead ask for a single PR that gets updated",
@@ -120,8 +133,7 @@
         " +githubRelease:\\n +slug: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +tag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n/"
       ],
       "datasourceTemplate": "github-releases",
-      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$",
-      "addLabels": ["vendir", "github-release"]
+      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
     },
     {
       "description": "https://regex101.com/r/SChCZX/1",
@@ -130,8 +142,7 @@
         " +git:\\n +url: (?<depName>[a-z0-9\\.\\/\\-:]*?)\\n +ref: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
       ],
       "datasourceTemplate": "git-refs",
-      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$",
-      "addLabels": ["vendir", "github-release"]
+      "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
     }
   ]
 
