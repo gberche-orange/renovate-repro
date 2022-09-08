@@ -89,6 +89,7 @@
       "addLabels": ["bosh-release"]
     },
     {
+      "description": "Prevent packages with many (e.g. weekly) major versions from creating noisy PRs, instead ask for a single PR that gets updated",
       "matchCurrentVersion": ">=100.0.0",
       "separateMultipleMajor": false
     }
@@ -111,6 +112,14 @@
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{#if tagPrefix}}^v(?<version>.*){{else}}(?<version>.*){{/if}}"
+    },
+    {
+      "fileMatch": ["vendor/vendir-k8s-manifest.yml$"],
+      "matchStrings": [
+        "/ +githubRelease:\\n +slug: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +tag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) +\\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "loose"
     }
   ]
 
