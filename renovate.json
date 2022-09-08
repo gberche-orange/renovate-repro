@@ -116,7 +116,7 @@
     {
       "fileMatch": ["vendor/vendir-k8s-manifest.yml$"],
       "matchStrings": [
-        " +githubRelease:\\n +slug: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +tag: (?<currentVersion>[a-z0-9\\.\\/\\-\\+]*?) *\\n/"
+        " +githubRelease:\\n +slug: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +tag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n/"
       ],
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "loose"
@@ -125,7 +125,7 @@
       "description": "https://regex101.com/r/SChCZX/1",
       "fileMatch": ["vendor/vendir-k8s-manifest.yml$"],
       "matchStrings": [
-        " +git:\\n +url: (?<depName>[a-z0-9\\.\\/\\-:]*?)\\n +ref: (?<currentVersion>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
+        " +git:\\n +url: (?<depName>[a-z0-9\\.\\/\\-:]*?)\\n +ref: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
       ],
       "datasourceTemplate": "git-refs",
       "versioningTemplate": "loose"
