@@ -42,7 +42,7 @@
       ]
     },
     {
-      "matchDatasources": ["github-releases"],
+      "matchDatasources": ["github-tags"],
       "matchPackageNames": [
         "pivotal-cf/shared-redis-release"
       ],
@@ -84,7 +84,7 @@
       "addLabels": ["terraform-provider"]
     },
     {
-      "matchDatasources": ["github-releases"],
+      "matchDatasources": ["github-tags"],
       "matchManagers": ["regex"],
       "matchPaths": ["root_deployment.yaml"],
       "addLabels": ["bosh-release"]
@@ -96,10 +96,10 @@
       "addLabels": ["vendir", "github-release"]
     },
     {
-      "matchDatasources": ["gitrefs"],
+      "matchDatasources": ["github-tags"],
       "matchManagers": ["regex"],
       "matchPaths": ["vendir-k8s-manifest.yml"],
-      "addLabels": ["vendir", "gitrefs"]
+      "addLabels": ["vendir", "github-tags"]
     },
     {
       "description": "Prevent packages with many (e.g. weekly) major versions from creating noisy PRs, instead ask for a single PR that gets updated",
@@ -118,11 +118,12 @@
       "versioningTemplate": "docker"
     },
     {
+      "description": "root-deployment is coa management of bosh released hosted in bosh.io from git tags. Not using github-releases ",
       "fileMatch": [".+/root-deployment\\.yml$"],
       "matchStrings": [
         "( +comments:.*\\n( {6}.*\\n)+)? +repository: (?<depName>[a-z0-9/-]*?)\\n( +sha1: .*\\n)?( +skip_branch_checkout: .*\\n)?( +tag_prefix: (?<tagPrefix>.*)\\n)? +version: '?(?<currentValue>[a-zA-Z0-9\\.\\-]*?)'?\\n"
       ],
-      "datasourceTemplate": "github-releases",
+      "datasourceTemplate": "github-tags",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{#if tagPrefix}}^v(?<version>.*){{else}}(?<version>.*){{/if}}"
     },
@@ -141,7 +142,7 @@
       "matchStrings": [
         " +git:\\n +url: (?<depName>[a-z0-9\\.\\/\\-:]*?)\\n +ref: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
       ],
-      "datasourceTemplate": "git-refs",
+      "datasourceTemplate": "github-tags",
       "versioningTemplate": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
     }
   ]
