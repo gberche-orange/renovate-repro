@@ -116,7 +116,7 @@
     {
       "fileMatch": ["vendor/vendir-k8s-manifest.yml$"],
       "matchStrings": [
-        "/ +githubRelease:\\n +slug: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +tag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) +\\n"
+        "/ +githubRelease:\\n +slug: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +tag: (?<currentVersion>[a-z0-9\\.\\/\\-\\+]*?) *\\n/"
       ],
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "loose"
