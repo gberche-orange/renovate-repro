@@ -91,7 +91,7 @@
     {
       "description": "Prevent packages with many (e.g. weekly) major versions from creating noisy PRs, instead ask for a single PR that gets updated",
       "matchCurrentVersion": ">=100.0.0",
-      "separateMultipleMajor": false
+      "separateMajorMinor": false
     }
   ],
 
