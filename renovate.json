@@ -84,7 +84,6 @@
       "addLabels": ["terraform-provider"]
     },
     {
-      "matchDatasources": ["github-tags"],
       "matchManagers": ["regex"],
       "matchPaths": ["root_deployment.yaml"],
       "addLabels": ["bosh-release"]
