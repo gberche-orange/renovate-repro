@@ -14,6 +14,7 @@
   "flux": {
     "fileMatch": [
       "shared-operators/k8s-kustomize-bases/helm/.+/.+\\.yaml$",
+      "shared-operators/k8s-kustomize-bases/00-common/fluxcd",
       ".+/.+/k8s-config/manifests/.+\\.yaml$"
     ]
   },
@@ -39,19 +40,22 @@
       ],
       "assignees": [
         "gberche-orange"
-      ]
+      ],
+      "description": "prBodyNotes adds additional text. Alternative it customChangeLogUrl when parseable",
+      "prBodyNotes": ["Additional changelog at https://github.com/bitnami/charts/blob/master/bitnami/redis/README.md#upgrading"]
     },
     {
+      "description": "PR assignee per package. TODO: expand to team",
       "matchDatasources": ["github-tags"],
       "matchPackageNames": [
         "pivotal-cf/shared-redis-release"
       ],
       "assignees": [
         "JCL38-ORANGE"
-      ],
-      "prBodyNotes": ["Additional changelog at https://github.com/pivotal-cf/shared-redis-release/blob/master/CHANGELOG (fake url)"]
+      ]
     },
     {
+      "description": "Tune versioning to avoid PR proposing v1.1.1 instead of 1.1.1",
       "matchDatasources": ["docker"],
       "matchPackageNames": [
         "boshprometheus/bosh-exporter",
@@ -99,11 +103,6 @@
       "matchManagers": ["regex"],
       "matchPaths": ["vendir-k8s-manifest.yml"],
       "addLabels": ["vendir", "github-tags"]
-    },
-    {
-      "description": "Prevent packages with many (e.g. weekly) major versions from creating noisy PRs, instead ask for a single PR that gets updated",
-      "matchCurrentVersion": ">=100.0.0",
-      "separateMajorMinor": false
     }
   ],
 
