@@ -152,7 +152,7 @@ releases:
     tag_prefix: ''
     version: '1'
   orange-prometheus-addons:
-    repository: orange-cloudfoundry/orange-prometheus-addons-boshrelease/
+    repository: orange-cloudfoundry/orange-prometheus-addons-boshrelease
     version: '3'
   os-conf:
     repository: cloudfoundry/os-conf-release
