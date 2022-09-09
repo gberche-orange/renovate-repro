@@ -85,7 +85,7 @@
     },
     {
       "matchManagers": ["regex"],
-      "matchPaths": ["root_deployment.yaml"],
+      "matchPaths": ["root-deployment.yml"],
       "addLabels": ["bosh-release"]
     },
     {
