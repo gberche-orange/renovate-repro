@@ -125,7 +125,7 @@
       ],
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "loose",
-      "extractVersionTemplate": "{{#if tagPrefix}}^v(?<version>.*){{else}}(?<version>.*){{/if}}"
+      "extractVersionTemplate": "{{#if tagPrefix}}(?<version>.*){{else}}^v(?<version>.*){{/if}}"
     },
     {
       "description": "https://regex101.com/r/xBV231/1",
