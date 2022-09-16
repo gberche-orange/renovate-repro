@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cp-ksql-server
+spec:
+  values:
+
+    # Align ksqldb server version with ksql-db cli to avoid mismatches, see https://forum.confluent.io/t/describe-throws-failed-to-deserialise-object-error/1002/3
+    image: confluentinc/ksqldb-server
+    imageTag: 0.23.1
+
+    replicaCount: 1 # single replica to workaround observed issue
+    # similar to https://github.com/confluentinc/cp-helm-charts/issues/609
+    # cp-ksql-server-7d8764cb88-hlkx8 cp-ksql-server Caused by: java.util.concurrent.ExecutionException: java.net.UnknownHostException: failed to resolve 'cp-ksql-server-7d8764cb88-9vz4p' after 2 queries
+
+    tolerations:
+    - key: bi
+      operator: Equal
+      value: "true"
+      effect: NoSchedule
+
+    cp-schema-registry:
+      url: "http://cp-schema-registry:8081"
+    kafka:
+      bootstrapServers: "SASL_PLAINTEXT://kafka-cluster-kafka-bootstrap:9092"
+    configurationOverrides:
+      #see https://docs.ksqldb.io/en/latest/operate-and-deploy/installation/server-config/security/#configure-kafka-authentication
+      sasl.mechanism: SCRAM-SHA-512
+      sasl.jaas.config: 'org.apache.kafka.common.security.scram.ScramLoginModule required username="kafka-admin-user" password="${kafka_admin_user_password}";'
+      security.protocol: SASL_PLAINTEXT

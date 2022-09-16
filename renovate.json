@@ -116,6 +116,15 @@
       "versioningTemplate": "docker"
     },
     {
+      "description": "https://regex101.com/r/Fshep2/1",
+      "fileMatch": ["master-depls/00-supervision/k8s-config/manifests/20-kafka-ksqldb-bi/cp-ksql-server-helm-release-patch\\.yaml$"],
+      "matchStrings": [
+        "  +image: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +imageTag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    },
+    {
       "description": "root-deployment is coa management of bosh released hosted in bosh.io from git tags. Not using github-releases ",
       "fileMatch": [".+/root-deployment\\.yml$"],
       "matchStrings": [
