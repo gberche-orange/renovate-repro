@@ -72,7 +72,10 @@
       "addLabels": ["docker"]
     },
     {
-      "matchPackagePrefixes": ["confluentinc/ksqldb-"],
+      "matchPackageNames": [
+        "confluentinc/ksqldb-server",
+        "confluentinc/ksqldb-cli"
+      ],
       "customChangelogUrl": "https://github.com/confluentinc/ksql",
       "prBodyNotes": ["Additional changelog at https://github.com/confluentinc/ksql/blob/master/CHANGELOG.md"]
 
