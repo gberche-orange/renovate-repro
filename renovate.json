@@ -72,6 +72,10 @@
       "addLabels": ["docker"]
     },
     {
+      "matchPackagePrefixes": ["confluentinc/ksqldb-"],
+      "customChangelogUrl": "https://github.com/confluentinc/ksql/blob/master/CHANGELOG.md"
+    },
+    {
       "matchDatasources": ["rubygems"],
       "addLabels": ["rubygems"]
     },
