@@ -120,7 +120,7 @@
       "versioningTemplate": "docker"
     },
     {
-      "description": "https://regex101.com/r/Fshep2/1",
+      "description": "patches image version in values.yaml https://regex101.com/r/Fshep2/1",
       "fileMatch": ["master-depls/00-supervision/k8s-config/manifests/20-kafka-ksqldb-bi/cp-ksql-server-helm-release-patch\\.yaml$"],
       "matchStrings": [
         "  +image: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +imageTag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
