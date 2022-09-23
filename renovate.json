@@ -98,7 +98,16 @@
     {
       "matchManagers": ["regex"],
       "matchPaths": ["root-deployment.yml"],
-      "addLabels": ["bosh-release", "renovate/{{replace '.*/' 'depName:' depName}}"]
+      "addLabels": [
+        "bosh-release",
+        "renovate/{{replace '.*/' 'brn: ' depName}}"]
+    },
+    {
+      "matchManagers": ["regex"],
+      "matchPaths": ["root-deployment.yml"],
+      "matchPackagePrefixes": ["starkandwayne/shield-boshrelease"],
+      "addLabels": [
+        "brn: shield"]
     },
     {
       "matchDatasources": ["github-releases"],
