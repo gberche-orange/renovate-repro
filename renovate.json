@@ -76,6 +76,10 @@
       "customChangelogUrl": "https://github.com/confluentinc/ksql"
     },
     {
+      "matchPackagePrefixes": ["starkandwayne/shield-boshrelease"],
+      "customChangelogUrl": "https://github.com/shieldproject/shield"
+    },
+    {
       "matchDatasources": ["rubygems"],
       "addLabels": ["rubygems"]
     },
