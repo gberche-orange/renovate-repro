@@ -100,7 +100,8 @@
       "matchPaths": ["root-deployment.yml"],
       "addLabels": [
         "bosh-release",
-        "{{replace '.*/' 'brn: ' depName}}"]
+        "{{#unless (or (containsString depName 'starkandwayne/shield-boshrelease') (containsString depName 'anotherorg/another-boshrelease')) }}replace '.*/' 'brn: ' depName{{/unless}}"],
+      "description": "See https://handlebarsjs.com/guide/builtin-helpers.html#unless https://github.com/renovatebot/renovate/blob/main/docs/usage/templates.md#containsstring and https://github.com/renovatebot/renovate/discussions/15833#discussioncomment-2873872"
     },
     {
       "matchManagers": ["regex"],
