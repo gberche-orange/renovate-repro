@@ -107,8 +107,11 @@
       "matchManagers": ["regex"],
       "matchPaths": ["root-deployment.yml"],
       "matchPackagePrefixes": ["starkandwayne/shield-boshrelease"],
+      "description": "brn=bosh_release_name bpn= bosh_process_name",
       "addLabels": [
-        "brn: shield"]
+        "brn: shield",
+        "bpn: shieldd"
+      ]
     },
     {
       "matchDatasources": ["github-releases"],
