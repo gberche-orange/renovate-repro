@@ -94,7 +94,7 @@
     {
       "matchManagers": ["regex"],
       "matchPaths": ["root-deployment.yml"],
-      "addLabels": ["bosh-release"]
+      "addLabels": ["bosh-release", "renovate/{{replace '.*/' 'depName:' depName}}"]
     },
     {
       "matchDatasources": ["github-releases"],
