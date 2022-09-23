@@ -100,7 +100,7 @@
       "matchPaths": ["root-deployment.yml"],
       "addLabels": [
         "bosh-release",
-        "renovate/{{replace '.*/' 'brn: ' depName}}"]
+        "{{replace '.*/' 'brn: ' depName}}"]
     },
     {
       "matchManagers": ["regex"],
