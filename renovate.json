@@ -85,10 +85,6 @@
       "customChangelogUrl": "https://github.com/cloudfoundry/service-fabrik-broker/"
     },
     {
-      "matchPackageNames": ["crossplane"],
-      "customChangelogUrl": "https://github.com/crossplane/crossplane/"
-    },
-    {
       "matchPackagePatterns": ["crossplane/(?<crossplanePackageName>[a-zA-Z0-9\\.\\-]*?)"],
       "customChangelogUrl": "https://github.com/crossplane/{{crossplanePackageName}}/"
     },
