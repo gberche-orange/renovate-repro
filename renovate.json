@@ -85,8 +85,17 @@
       "customChangelogUrl": "https://github.com/cloudfoundry/service-fabrik-broker/"
     },
     {
-      "matchPackagePatterns": ["crossplane/(?<crossplanePackageName>[a-zA-Z0-9\\.\\-]*?)"],
-      "customChangelogUrl": "https://github.com/crossplane/{{crossplanePackageName}}/"
+      "description": "crossplane providers docker images are hosted on the crossplane-contrib github org",
+      "matchDatasources": [ "docker"],
+      "matchPackagePatterns": [
+          "crossplane/(?<crossplanePackageName>[a-zA-Z0-9\\.\\-]*?)"
+      ],
+      "customChangelogUrl": "https://github.com/crossplane-contrib/{{crossplanePackageName}}/"
+    },
+    {
+      "description": "crossplane main package is on the crossplane org. This should apply both to helm and any docker datasources",
+      "matchPackageNames": ["crossplane"],
+      "customChangelogUrl": "https://github.com/crossplane/crossplane/"
     },
 
     {
