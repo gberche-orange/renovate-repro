@@ -137,6 +137,15 @@
       "versioningTemplate": "docker"
     },
     {
+      "description": "patches crossplane provider package version  https://regex101.com/r/0tH0fA/1",
+      "fileMatch": [".*\\.yaml$"],
+      "matchStrings": [
+        "^apiVersion: pkg.crossplane.io\\/.*\\nkind: Provider\\n(.*\\n)+(.* package: )(?<depName>[a-z0-9\\.\\/\\-]*?):(?<currentValue>[a-z0-9\\.\\/\\-\\+]*?)\\n"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    },
+    {
       "description": "root-deployment is coa management of bosh released hosted in bosh.io from git tags. Not using github-releases ",
       "fileMatch": [".+/root-deployment\\.yml$"],
       "matchStrings": [
