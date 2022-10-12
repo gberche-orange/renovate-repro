@@ -93,22 +93,6 @@
       "customChangelogUrl": "https://github.com/crossplane/crossplane/"
     },
     {
-      "matchDatasources": ["rubygems"],
-      "addLabels": ["rubygems"]
-    },
-    {
-      "matchDatasources": ["ruby-version"],
-      "addLabels": ["ruby-version"]
-    },
-    {
-      "matchDatasources": ["helm"],
-      "addLabels": ["helm"]
-    },
-    {
-      "matchDatasources": ["terraform-provider"],
-      "addLabels": ["terraform-provider"]
-    },
-    {
       "matchManagers": ["regex"],
       "matchPaths": ["root-deployment.yml"],
       "addLabels": [
@@ -130,13 +114,13 @@
       "matchDatasources": ["github-releases"],
       "matchManagers": ["regex"],
       "matchPaths": ["vendir-k8s-manifest.yml"],
-      "addLabels": ["vendir", "github-release"]
+      "addLabels": ["vendir"]
     },
     {
       "matchDatasources": ["github-tags"],
       "matchManagers": ["regex"],
       "matchPaths": ["vendir-k8s-manifest.yml"],
-      "addLabels": ["vendir", "github-tags"]
+      "addLabels": ["vendir"]
     }
   ],
 
