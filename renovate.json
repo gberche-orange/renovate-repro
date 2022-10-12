@@ -111,13 +111,6 @@
       ]
     },
     {
-      "matchDatasources": ["github-releases"],
-      "matchManagers": ["regex"],
-      "matchPaths": ["vendir-k8s-manifest.yml"],
-      "addLabels": ["vendir"]
-    },
-    {
-      "matchDatasources": ["github-tags"],
       "matchManagers": ["regex"],
       "matchPaths": ["vendir-k8s-manifest.yml"],
       "addLabels": ["vendir"]
