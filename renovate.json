@@ -69,10 +69,6 @@
       "versioning": "regex:v?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)?$"
     },
     {
-      "matchPackagePatterns": [".*"],
-      "addLabels": ["{{datasource}}"]
-    },
-    {
       "matchPackagePrefixes": ["confluentinc/ksqldb-"],
       "customChangelogUrl": "https://github.com/confluentinc/ksql"
     },
@@ -91,6 +87,11 @@
     {
       "matchPackageNames": ["crossplane"],
       "customChangelogUrl": "https://github.com/crossplane/crossplane/"
+    },
+
+    {
+      "matchPackagePatterns": [".*"],
+      "addLabels": ["{{datasource}}"]
     },
     {
       "matchManagers": ["regex"],
