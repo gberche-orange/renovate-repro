@@ -56,6 +56,28 @@
       ]
     },
     {
+      "description": "@gberche-orange assignments",
+      "matchPackagePatterns": [
+        "crossplane.*",
+        "interoperator",
+        "kudobuilder/kuttl",
+        "vmware-tanzu/carvel-kapp-controller",
+        "terraform-google-modules/.*"
+      ],
+      "assignees": [
+        "gberche-orange"
+      ]
+    },
+    {
+      "description": "@Guilamb assignments",
+      "matchPackagePatterns": [
+        "confluentinc/ksqldb.*"
+      ],
+      "assignees": [
+        "Guilamb"
+      ]
+    },
+    {
       "description": "Tune versioning to avoid PR proposing v1.1.1 instead of 1.1.1",
       "matchDatasources": ["docker"],
       "matchPackageNames": [
