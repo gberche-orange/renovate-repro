@@ -88,7 +88,7 @@
       "description": "DISABLED until customChangeUrl template support, see https://github.com/renovatebot/renovate/discussions/18280. crossplane providers docker images are hosted on the crossplane-contrib github org. ",
       "matchDatasources": [ "DISABLED docker"],
       "matchPackagePatterns": [
-          "crossplane/provider-.*"
+        "crossplane/provider-.*"
       ],
       "customChangelogUrl": "https://github.com/crossplane-contrib/{{{replace 'crossplane/' '' depName}}}/"
     },
@@ -111,8 +111,8 @@
       "customChangelogUrl": "https://github.com/crossplane-contrib/provider-kubernetes/"
     },
     {
-      "matchPackageNames": ["crossplane/provider-crossplane/provider-jet-gcp"],
-      "customChangelogUrl": "https://github.com/crossplane-contrib/provider-crossplane/provider-jet-gcp/"
+      "matchPackageNames": ["crossplane/provider-jet-gcp"],
+      "customChangelogUrl": "https://github.com/crossplane-contrib/provider-jet-gcp/"
     },
 
 
