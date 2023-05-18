@@ -16,8 +16,7 @@
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "loose",
 
-      "extractVersionTemplate": "ubuntu-jammy\/v(?<version>.*)",
-      "autoReplaceStringTemplate": "stemcell:\\n  version: '{{{newValue}}}'"
+      "extractVersionTemplate": "ubuntu-jammy\/v(?<version>.*)"
     }
   ]
 
