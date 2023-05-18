@@ -10,12 +10,12 @@
     {
       "fileMatch": [".+/root-deployment\\.yml$"],
       "matchStrings": [
-        "stemcell:\\n *version: '(?<currentValue>[1-9.]+)'"
+        "stemcell:\\n *version: '(?<currentValue>[0-9.]+)'"
       ],
       "depNameTemplate": "cloudfoundry/bosh-linux-stemcell-builder",
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$",
-      "extractVersionTemplate": "ubuntu-bionic\/v(?<version>.*)"
+      "extractVersionTemplate": "ubuntu-jammy\/v(?<version>.*)"
     }
   ]
 
