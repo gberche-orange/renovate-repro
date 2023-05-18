@@ -6,4 +6,4 @@ releases:
     tag_prefix: ''
     version: '1'
 stemcell:
-  version: '1.107'
+  version: '1.105'
