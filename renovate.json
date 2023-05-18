@@ -14,8 +14,7 @@
       ],
       "depNameTemplate": "cloudfoundry/bosh-linux-stemcell-builder",
       "datasourceTemplate": "github-releases",
-      "versioningTemplate": "loose",
-
+      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$",
       "extractVersionTemplate": "ubuntu-bionic\/v(?<version>.*)"
     }
   ]
