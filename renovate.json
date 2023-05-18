@@ -14,15 +14,15 @@
   ],
   "flux": {
     "fileMatch": [
-      "shared-operators/k8s-kustomize-bases/helm/.+/.+\\.yaml$",
+      "shared-operators/k8s-kustomize-bases/helm/.+/.+\\.y[a]*ml$",
       "shared-operators/k8s-kustomize-bases/00-common/fluxcd",
-      ".+/.+/k8s-config/manifests/.+\\.yaml$"
+      ".+/.+/k8s-config/manifests/.+\\.y[a]*ml$"
     ]
   },
   "kubernetes": {
     "fileMatch": [
-      "shared-operators/k8s-kustomize-bases/.+\\.yaml$",
-      ".+/.+/k8s-config/manifests/.+\\.yaml$"
+      "shared-operators/k8s-kustomize-bases/.+\\.y[a]*ml$",
+      ".+/.+/k8s-config/manifests/.+\\.y[a]*ml$"
     ],
     "ignorePaths": [
       "shared-operators/k8s-kustomize-bases/services/redis-binding/redis-binding-formatter-helm-chart"
@@ -59,13 +59,43 @@
       "description": "@gberche-orange assignments",
       "matchPackagePatterns": [
         "crossplane.*",
+        "xpkg.upbound.io.*",
         "interoperator",
         "kudobuilder/kuttl",
-        "vmware-tanzu/carvel-kapp-controller",
-        "terraform-google-modules/.*"
+        "carvel-dev/carvel-kapp-controller",
+        "terraform-google-modules/.*",
+        "argo-workflows"
       ],
       "assignees": [
         "gberche-orange"
+      ]
+    },
+    {
+      "description": "@o-orand assignments",
+      "matchPackagePatterns": [
+        "concourse*",
+        "jcr*"
+      ],
+      "assignees": [
+        "o-orand"
+      ]
+    },
+    {
+      "description": "@poblin-orange assignments",
+      "matchPackagePatterns": [
+        "kyverno"
+      ],
+      "assignees": [
+        "poblin-orange"
+      ]
+    },
+    {
+      "description": "@ogrand assignments",
+      "matchPackagePatterns": [
+        "farmer1992/sshpiperd"
+      ],
+      "assignees": [
+        "ogrand"
       ]
     },
     {
@@ -107,6 +137,24 @@
       "customChangelogUrl": "https://github.com/cloudfoundry/service-fabrik-broker/"
     },
     {
+      "matchPackageNames": ["kyverno"],
+      "customChangelogUrl": "https://github.com/kyverno/kyverno",
+      "prBodyNotes": "Check out also https://kyverno.io/blog/"
+    },
+    {
+      "matchPackageNames": ["terraform-operator"],
+      "prBodyNotes": "Check out also https://github.com/isaaguilar/terraform-operator/releases"
+    },
+    {
+      "matchPackageNames": ["argo-workflows"],
+      "prBodyNotes": "Check out also appVersion version in https://github.com/argoproj/argo-helm/blob/main/charts/argo-workflows/Chart.yaml#L2 release in https://github.com/argoproj/argo-workflows/releases/ https://blog.argoproj.io/ and https://github.com/argoproj/argo-workflows/blob/master/CHANGELOG.md"
+    },
+    {
+      "matchPackageNames": ["kudobuilder/kuttl"],
+      "customChangelogUrl": "https://github.com/kudobuilder/kuttl",
+      "prBodyNotes": "Check out also https://github.com/kudobuilder/kuttl.dev/commits/master"
+    },
+    {
       "description": "DISABLED until customChangeUrl template support, see https://github.com/renovatebot/renovate/discussions/18280. crossplane providers docker images are hosted on the crossplane-contrib github org. ",
       "matchDatasources": [ "DISABLED docker"],
       "matchPackagePatterns": [
@@ -117,24 +165,50 @@
     {
       "description": "crossplane main package is on the crossplane org. This should apply both to helm and any docker datasources",
       "matchPackageNames": ["crossplane"],
-      "customChangelogUrl": "https://github.com/crossplane/crossplane/"
+      "customChangelogUrl": "https://github.com/crossplane/crossplane/",
+      "prBodyNotes": ["also checkout https://blog.upbound.io/, slack channel announcement https://crossplane.slack.com/archives/CEFQCGW1H, and [community meeting agenda](https://docs.google.com/document/d/1q_sp2jLQsDEOX7Yug6TPOv7Fwrys6EwcF5Itxjkno7Y)"]
+    },
+    {
+      "description": "tunes the PR body for concourse",
+      "matchPackageNames": ["concourse"],
+      "prBodyNotes": ["also checkout https://github.com/concourse/concourse/releases https://github.com/concourse/concourse/discussions"]
     },
 
     {
-      "matchPackageNames": ["crossplane/provider-gcp"],
+      "matchPackageNames": ["crossplanecontrib/provider-gcp"],
       "customChangelogUrl": "https://github.com/crossplane-contrib/provider-gcp/"
     },
     {
-      "matchPackageNames": ["crossplane/provider-helm"],
+      "matchPackageNames": ["crossplanecontrib/provider-helm"],
       "customChangelogUrl": "https://github.com/crossplane-contrib/provider-helm/"
     },
     {
-      "matchPackageNames": ["crossplane/provider-kubernetes"],
+      "matchPackageNames": ["crossplanecontrib/provider-kubernetes"],
       "customChangelogUrl": "https://github.com/crossplane-contrib/provider-kubernetes/"
     },
     {
       "matchPackageNames": ["crossplane/provider-jet-gcp"],
       "customChangelogUrl": "https://github.com/crossplane-contrib/provider-jet-gcp/"
+    },
+    {
+      "matchPackageNames": ["tf-controller"],
+      "customChangelogUrl": "https://github.com/weaveworks/tf-controller/",
+      "prBodyNotes": ["Checkout also https://github.com/weaveworks/tf-controller/tree/main/charts/tf-controller"]
+    },
+    {
+      "matchPackageNames": ["xpkg.upbound.io/upbound/provider-gcp"],
+      "customChangelogUrl": "https://github.com/upbound/provider-gcp/",
+      "prBodyNotes": ["also checkout slack channel announcement https://crossplane.slack.com/archives/CEFQCGW1H, https://github.com/upbound/platform-ref-gcp/ and https://marketplace.upbound.io/providers/upbound/provider-gcp/ with examples and uptest.upbound.io/*-hook or upjet.upbound.io/manual-intervention annotation"]
+    },
+    {
+      "matchPackageNames": ["carvel-dev/carvel-kapp-controller"],
+      "description": "blog + manual workaround for https://github.com/renovatebot/renovate/issues/17711",
+      "prBodyNotes": ["Checkout Carvel blog at https://carvel.dev/blog/ \n\nUpon merge:\n* [ ] run from bosh-cli `proxy -s; cd vendor; ./vendor.sh ; git add k8s-manifests/github.com/carvel-dev/carvel-kapp-controller/release.yml; git diff; git commit -m \"refresh following bump\""]
+    },
+    {
+      "matchPackageNames": ["carvel-dev/carvel-secretgen-controller \t"],
+      "description": "blog + manual workaround for https://github.com/renovatebot/renovate/issues/17711",
+      "prBodyNotes": ["Checkout Carvel blog at https://carvel.dev/blog/ \n\nUpon merge:\n* [ ] run from bosh-cli `proxy -s; cd vendor; ./vendor.sh ; git add k8s-manifests/github.com/carvel-dev/carvel-secretgen-controller/release.yml; git diff; git commit -m \"refresh following bump\""]
     },
 
 
@@ -144,7 +218,7 @@
     },
     {
       "matchManagers": ["regex"],
-      "matchPaths": ["root-deployment.yml"],
+      "matchPaths": ["**/root-deployment.yml"],
       "addLabels": [
         "bosh-release",
         "{{#unless (or (containsString depName 'starkandwayne/shield-boshrelease') (containsString depName 'anotherorg/another-boshrelease')) }}{{replace '.*/(.*)-release' 'brn: $1' depName}}{{/unless}}"],
@@ -152,7 +226,7 @@
     },
     {
       "matchManagers": ["regex"],
-      "matchPaths": ["root-deployment.yml"],
+      "matchPaths": ["**/root-deployment.yml"],
       "matchPackagePrefixes": ["starkandwayne/shield-boshrelease"],
       "description": "bpn= bosh_process_name. Manually handling shield since it deviates from usual pattern with -release suffix. + Add bpn for more focussed package status checks",
       "addLabels": [
@@ -162,7 +236,7 @@
     },
     {
       "matchManagers": ["regex"],
-      "matchPaths": ["vendir-k8s-manifest.yml"],
+      "matchFiles": ["vendor/vendir-k8s-manifest.yml"],
       "addLabels": ["vendir"]
     }
   ],
@@ -178,7 +252,7 @@
     },
     {
       "description": "patches image version in values.yaml https://regex101.com/r/Fshep2/1",
-      "fileMatch": ["master-depls/00-supervision/k8s-config/manifests/20-kafka-ksqldb-bi/cp-ksql-server-helm-release-patch\\.yaml$"],
+      "fileMatch": ["master-depls/00-supervision/k8s-config/manifests/20-kafka-ksqldb-bi/cp-ksql-server-helm-release-patch\\.y[a]*ml$"],
       "matchStrings": [
         "  +image: (?<depName>[a-z0-9\\.\\/\\-]*?)\\n +imageTag: (?<currentValue>[a-z0-9\\.\\/\\-\\+]*?) *\\n"
       ],
@@ -186,16 +260,16 @@
       "versioningTemplate": "docker"
     },
     {
-      "description": "patches crossplane provider package version  https://regex101.com/r/3ug5iv/2",
-      "fileMatch": [".*/provider.*\\.yaml$"],
+      "description": "patches crossplane provider package version  https://regex101.com/r/3ug5iv/3",
+      "fileMatch": [".*/provider.*\\.y[a]*ml$"],
       "matchStrings": [
-        "apiVersion: pkg.crossplane.io\\/.*\\nkind: Provider\\n(.*\\n)+(.* package: \"?)(?<depName>[a-z0-9\\.\\/\\-]*?):(?<currentValue>[a-z0-9\\.\\/\\-\\+]*?)\"?\\n"
+        "apiVersion: pkg.crossplane.io\\/.*\\nkind: Provider\\n(.*\\n)+(.* package:[ ]*\"?)(?<depName>[a-z0-9\\.\\/\\-]*?):(?<currentValue>[a-z0-9\\.\\/\\-\\+]*?)\"?\\n"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
     },
     {
-      "description": "root-deployment is coa management of bosh released hosted in bosh.io from git tags. Not using github-releases ",
+      "description": "bump of releases in root-deployment is coa management of bosh released hosted in bosh.io from git tags. Not using github-releases ",
       "fileMatch": [".+/root-deployment\\.yml$"],
       "matchStrings": [
         "( +comments:.*\\n( {6}.*\\n)+)? +repository: (?<depName>[a-z0-9/-]*?)\\n( +sha1: .*\\n)?( +skip_branch_checkout: .*\\n)?( +tag_prefix: (?<tagPrefix>.*)\\n)? +version: '?(?<currentValue>[a-zA-Z0-9\\.\\-]*?)'?\\n"
@@ -203,6 +277,18 @@
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "loose",
       "extractVersionTemplate": "{{#if tagPrefix}}(?<version>.*){{else}}^v(?<version>.*){{/if}}"
+    },
+    {
+      "description": "bump of stemcell version within root-deployment.yaml: bosh stemcell hosted in bosh.io from github release tags. Not using github tags as they also include transient release candidates. matchStrings: https://regex101.com/r/3Gzhig/1 extracts: jammy currentValue=1.174  expecting tag=ubuntu-bionic/v1.195 and extractVersionTemplate: https://regex101.com/r/ZrrDJ2/1",
+      "fileMatch": [".+/root-deployment\\.yml$"],
+      "matchStrings": [
+        "stemcell:\\n.*version: '(?<currentValue>[1-9.]+)'"
+      ],
+      "depNameTemplate": "cloudfoundry/bosh-linux-stemcell-builder",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "regex:(?<major>\\d+)\\.(?<minor>\\d+)$",
+
+      "extractVersionTemplate": "ubuntu-bionic\/v(?<version>.*)$"
     },
     {
       "description": "https://regex101.com/r/ms9hZL/1",
