@@ -286,7 +286,7 @@
       ],
       "depNameTemplate": "cloudfoundry/bosh-linux-stemcell-builder",
       "datasourceTemplate": "github-releases",
-      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$",
+      "versioningTemplate": "loose",
 
       "extractVersionTemplate": "ubuntu-jammy\/v(?<version>.*)"
     },
