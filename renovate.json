@@ -221,8 +221,8 @@
       "matchPaths": ["**/root-deployment.yml"],
       "addLabels": [
         "bosh-release",
-        "{{#unless (or (containsString depName 'starkandwayne/shield-boshrelease') (containsString depName 'anotherorg/another-boshrelease')) }}{{replace '.*/(.*)-release' 'brn: $1' depName}}{{/unless}}"],
-      "description": "brn=bosh_release_name.  See https://handlebarsjs.com/guide/builtin-helpers.html#unless https://github.com/renovatebot/renovate/blob/main/docs/usage/templates.md#containsstring and https://github.com/renovatebot/renovate/discussions/15833#discussioncomment-2873872 and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences#using_groups_and_back_references"
+        "{{#unless (or (containsString depName 'cloudfoundry/bosh-linux-stemcell-builder') (containsString depName 'starkandwayne/shield-boshrelease') (containsString depName 'anotherorg/another-boshrelease')) }}{{replace '.*/(.*)-release' 'brn: $1' depName}}{{/unless}}"],
+      "description": "brn=bosh_release_name. Excluded for stemcells. See https://handlebarsjs.com/guide/builtin-helpers.html#unless https://github.com/renovatebot/renovate/blob/main/docs/usage/templates.md#containsstring and https://github.com/renovatebot/renovate/discussions/15833#discussioncomment-2873872 and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences#using_groups_and_back_references"
     },
     {
       "matchManagers": ["regex"],
@@ -279,7 +279,7 @@
       "extractVersionTemplate": "{{#if tagPrefix}}(?<version>.*){{else}}^v(?<version>.*){{/if}}"
     },
     {
-      "description": "bump of stemcell version within root-deployment.yaml: bosh stemcell hosted in bosh.io from github release tags. Not using github tags as they also include transient release candidates. matchStrings: https://regex101.com/r/3Gzhig/1 extracts: jammy currentValue=1.174  expecting tag=ubuntu-bionic/v1.195 and extractVersionTemplate: https://regex101.com/r/ZrrDJ2/1",
+      "description": "bump of stemcell version within root-deployment.yaml: bosh stemcell hosted in bosh.io from github release tags. Not using github tags as they also include transient release candidates. matchStrings: https://regex101.com/r/3Gzhig/1 extracts: jammy currentValue=1.174  expecting tag=ubuntu-bionic/v1.195 and extractVersionTemplate: https://regex101.com/r/ZrrDJ2/1 See regex doc at https://docs.renovatebot.com/modules/manager/regex/",
       "fileMatch": [".+/root-deployment\\.yml$"],
       "matchStrings": [
         "stemcell:\\n.*version: '(?<currentValue>[1-9.]+)'"
