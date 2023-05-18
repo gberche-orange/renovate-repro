@@ -10,7 +10,7 @@
     {
       "fileMatch": [".+/root-deployment\\.yml$"],
       "matchStrings": [
-        "stemcell:\\n.*version: '(?<currentValue>[1-9.]+)'"
+        "stemcell:\\n *version: '(?<currentValue>[1-9.]+)'"
       ],
       "depNameTemplate": "cloudfoundry/bosh-linux-stemcell-builder",
       "datasourceTemplate": "github-releases",
