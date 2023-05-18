@@ -5,7 +5,13 @@
     ":disableRateLimiting",
     ":rebaseStalePrs"
   ],
-
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "matchPackageNames": ["cloudfoundry/bosh-linux-stemcell-builder"],
+      "addLabels": ["bosh-stemcell", "jammy"]
+    }
+  ],
   "regexManagers": [
     {
       "fileMatch": [".+/root-deployment\\.yml$"],
