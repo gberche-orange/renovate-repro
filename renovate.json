@@ -16,7 +16,7 @@
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "loose",
 
-      "extractVersionTemplate": "ubuntu-bionic\\/v(?<version>.*)"
+      "extractVersionTemplate": "ubuntu-jammy\\/v(?<version>.*)"
     }
   ]
 
