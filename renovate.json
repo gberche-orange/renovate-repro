@@ -219,7 +219,6 @@
     {
       "matchManagers": ["regex"],
       "matchPaths": ["**/root-deployment.yml"],
-      "excludePackageNames": ["cloudfoundry/bosh-linux-stemcell-builder"],
       "addLabels": [
         "bosh-release",
         "{{#unless (or (containsString depName 'starkandwayne/shield-boshrelease') (containsString depName 'anotherorg/another-boshrelease')) }}{{replace '.*/(.*)-release' 'brn: $1' depName}}{{/unless}}"],
